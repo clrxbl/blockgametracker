@@ -2,8 +2,6 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: blockgametracker
-  labels:
-    app: blockgametracker
 spec:
   selector:
     matchLabels:

@@ -2,19 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockgametracker
-  labels:
-    app: blockgametracker
 spec:
   replicas: 3
   template:
     metadata:
       name: blockgametracker
-      labels:
-        app: blockgametracker
     spec:
       dnsPolicy: None
       dnsConfig:
-        nameservers:
+        nameservers: # Override Kubernetes DNS
           - 1.1.1.1
           - 1.0.0.1
           - 8.8.8.8

@@ -16,7 +16,7 @@ spec:
           - 8.8.8.8
       containers:
         - name: app
-          image: rg.nl-ams.scw.cloud/blockgametracker/blockgametracker:latest
+          image: ghcr.io/clrxbl/blockgametracker:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

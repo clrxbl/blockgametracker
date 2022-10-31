@@ -1,0 +1,12 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+  - servicemonitor.yaml
+commonLabels:
+  app: blockgametracker
+configMapGenerator:
+  - name: blockgametracker
+    files:
+      - config/servers.yaml
+    options:
+      disableNameSuffixHash: true

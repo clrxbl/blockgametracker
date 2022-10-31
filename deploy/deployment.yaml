@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockgametracker
+  labels:
+    app: blockgametracker
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: blockgametracker
+      labels:
+        app: blockgametracker
+    spec:
+      dnsPolicy: None
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
+          - 1.0.0.1
+          - 8.8.8.8
+      containers:
+        - name: app
+          image: rg.nl-ams.scw.cloud/blockgametracker/blockgametracker:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+      imagePullSecrets:
+        - name: registry-secret
+      restartPolicy: Always
+      volumes:
+        - name: config
+          configMap:
+            name: blockgametracker
+  selector:
+    matchLabels:
+      app: blockgametracker

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blockgametracker
+  labels:
+    app: blockgametracker
+spec:
+  selector:
+    app: blockgametracker
+  ports:
+    - name: metrics
+      port: 8080

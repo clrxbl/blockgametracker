@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "blockgametracker"
+version = "0.0.1" # Unused
+description = "Minecraft server prometheus exporter"
+authors = ["Michael H. <michael@iptables.sh>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+loguru = "^0.6.0"
+HiYaPyCo = "^0.4.16"
+MarkupSafe = "2.0.1"
+loguru-logging-intercept = "^0.1.1"
+mcstatus = "^9.4.2"
+prometheus-client = "^0.15.0"
+func-timeout = "^4.3.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

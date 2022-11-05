@@ -85,3 +85,5 @@ servers:
     address: "play.minerival.org"
   - name: "Chasecraft"
     address: "play.chasecraft.gg"
+  - name: "Monumenta"
+    address: "server.playmonumenta.com"

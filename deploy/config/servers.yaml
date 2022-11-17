@@ -17,6 +17,8 @@ servers:
     address: "2b2t.org"
   - name: "Manacube"
     address: "play.manacube.com"
+  - name: "Loka"
+    address: "play.lokamc.com"
   - name: "Lemoncloud"
     address: "play.lemoncloud.org"
   - name: "Complex Gaming"

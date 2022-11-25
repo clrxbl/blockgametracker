@@ -41,8 +41,8 @@ class MinecraftServerList:
       logger.debug(self.edition.value)
       self.servers = config[f"{self.edition.value}"]
     except KeyError:
-      logger.error(f"Could not find {self.edition.value} servers in config file")
-      pass
+      logger.warning(f"Could not find {self.edition.value} servers in config file")
+      raise
 
 
 @dataclass
@@ -137,19 +137,23 @@ class MinecraftCollector(object):
             labels=["server_edition", "server_name", "server_host", "server_version"])
 
     for edition in MinecraftServerEdition:
-      config = MinecraftServerList(edition)
-      logger.info("Collecting metrics from " + str(len(config.servers)) + " servers...")
-      start = timer()
+      try:
+        config = MinecraftServerList(edition)
+      except Exception:
+        continue
+      else:
+        logger.info("Collecting metrics from " + str(len(config.servers)) + " servers...")
+        start = timer()
 
-      metrics = asyncio.run(metric_collection(edition, config.servers))
+        metrics = asyncio.run(metric_collection(edition, config.servers))
 
-      for server in metrics:
-        if server.version is not None and server.playercount is not None:
-          gauge.add_metric([server.edition.value, server.name, server.address, str(server.version)], server.playercount)
-        else:
-          logger.warning(f"{server} did not return any metrics, not adding to gauge")
-      end = timer()
-      logger.info(f"Finished collecting {server.edition} metrics in {round((end - start), 2)} seconds")
+        for server in metrics:
+          if server.version is not None and server.playercount is not None:
+            gauge.add_metric([server.edition.value, server.name, server.address, str(server.version)], server.playercount)
+          else:
+            logger.warning(f"{server} did not return any metrics, not adding to gauge")
+        end = timer()
+        logger.info(f"Finished collecting {server.edition} metrics in {round((end - start), 2)} seconds")
     yield gauge
 
 

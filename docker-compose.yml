@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  blockgametracker:
+    build: .
+    image: ghcr.io/clrxbl/blockgametracker
+    ports:
+      - "8080:8080"
+    environment:
+      CONFIG_FILE: "/config/servers.yaml"
+    volumes:
+      - ./deploy/config:/config

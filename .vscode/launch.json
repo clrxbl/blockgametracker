@@ -12,7 +12,8 @@
       "console": "integratedTerminal",
       "justMyCode": true,
       "env": {
-        "CONFIG_FILE": "deploy/config/servers.yaml"
+        "CONFIG_FILE": "deploy/config/servers.yaml",
+        "LOG_LEVEL": "DEBUG"
       }
     }
   ]

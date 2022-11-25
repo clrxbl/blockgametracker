@@ -13,8 +13,37 @@ from prometheus_client import start_http_server
 from prometheus_client.core import GaugeMetricFamily, REGISTRY
 from mcstatus import JavaServer, BedrockServer
 from timeit import default_timer as timer
+from enum import Enum
 
 CONFIG_FILE = os.getenv("CONFIG_FILE", "config/servers.yaml")
+
+class MinecraftServerEdition(Enum):
+  """
+  Minecraft server edition
+  """
+
+  JAVA = str("java")
+  BEDROCK = str("bedrock")
+
+
+@dataclass
+class MinecraftServerList:
+  """
+  List of Minecraft servers with name & address
+  """
+
+  edition: MinecraftServerEdition
+  servers: dict = None
+
+  def __post_init__(self):
+    config = hiyapyco.load(CONFIG_FILE)
+    try:
+      logger.debug(self.edition.value)
+      self.servers = config[f"{self.edition.value}"]
+    except KeyError:
+      logger.error(f"Could not find {self.edition.value} servers in config file")
+      pass
+
 
 @dataclass
 class MinecraftServer:
@@ -22,7 +51,7 @@ class MinecraftServer:
   Class for querying a Minecraft server
   """
 
-  edition: str = "java"
+  edition: MinecraftServerEdition = MinecraftServerEdition.JAVA
   name: str = "Minecraft server"
   address: str = "127.0.0.1"
   port: int = None # We don't want to set a port otherwise mcstatus does not do SRV lookups
@@ -43,9 +72,9 @@ class MinecraftServer:
       address = self.address
 
     try:
-      if self.edition == "java":
+      if self.edition == MinecraftServerEdition.JAVA:
         server = JavaServer.lookup(address)
-      elif self.edition == "bedrock":
+      elif self.edition == MinecraftServerEdition.BEDROCK:
         server = BedrockServer.lookup(address)
       else:
         raise NotImplementedError("Unknown server edition")
@@ -57,20 +86,23 @@ class MinecraftServer:
       return
 
     self.version = int(status.version.protocol)
-    self.playercount = int(status.players.online)
+    if self.edition == MinecraftServerEdition.BEDROCK:
+      self.playercount = int(status.players_online)
+    else:
+      self.playercount = int(status.players.online)
 
     end = timer()
     logger.info(f"Queried {self.name} ({self.address}) in {round((end - start), 2)} seconds")
     return self.playercount, self.version
 
 
-async def collect_metrics(sem, server):
+async def collect_metrics(sem, edition, server):
   """
   Actually collect & return the data from the server
   """
   
   async with sem:
-    server = MinecraftServer(name=server["name"], address=server["address"])
+    server = MinecraftServer(edition=edition, name=server["name"], address=server["address"])
 
     try:
       await server.query()
@@ -81,14 +113,14 @@ async def collect_metrics(sem, server):
     return server
 
 
-async def metric_collection(servers):
+async def metric_collection(edition, servers):
   """
   Collect metrics from all servers
   """
 
   sem = asyncio.Semaphore(8)
 
-  workers = [asyncio.create_task(collect_metrics(sem, server)) for server in servers]
+  workers = [asyncio.create_task(collect_metrics(sem, edition, server)) for server in servers]
   result = await asyncio.gather(*workers)
 
   return result
@@ -101,22 +133,23 @@ class MinecraftCollector(object):
 
 
   def collect(self):
-    config = hiyapyco.load(CONFIG_FILE)
     gauge = GaugeMetricFamily("minecraft_status_players_online_count", "Minecraft server online player counts",
             labels=["server_edition", "server_name", "server_host", "server_version"])
 
-    logger.info("Collecting metrics from " + str(len(config["servers"])) + " servers...")
-    start = timer()
+    for edition in MinecraftServerEdition:
+      config = MinecraftServerList(edition)
+      logger.info("Collecting metrics from " + str(len(config.servers)) + " servers...")
+      start = timer()
 
-    metrics = asyncio.run(metric_collection(config["servers"]))
+      metrics = asyncio.run(metric_collection(edition, config.servers))
 
-    for server in metrics:
-      if server.version is not None and server.playercount is not None:
-        gauge.add_metric([server.edition, server.name, server.address, str(server.version)], server.playercount)
-      else:
-        logger.warning(f"{server} did not return any metrics, not adding to gauge")
-    end = timer()
-    logger.info(f"Finished collecting metrics in {round((end - start), 2)} seconds")
+      for server in metrics:
+        if server.version is not None and server.playercount is not None:
+          gauge.add_metric([server.edition.value, server.name, server.address, str(server.version)], server.playercount)
+        else:
+          logger.warning(f"{server} did not return any metrics, not adding to gauge")
+      end = timer()
+      logger.info(f"Finished collecting {server.edition} metrics in {round((end - start), 2)} seconds")
     yield gauge
 
 

@@ -1,4 +1,4 @@
-servers:
+java:
   - name: "MCC Island"
     address: "play.mccisland.net"
   - name: "Tubnet"
@@ -89,3 +89,18 @@ servers:
     address: "play.chasecraft.gg"
   - name: "Monumenta"
     address: "server.playmonumenta.com"
+bedrock:
+  - name: "Mineville"
+    address: "play.inpvp.net"
+  - name: "Lifeboat"
+    address: "mco.lbsg.net"
+  - name: "Mineplex"
+    address: "mco.mineplex.com"
+  - name: "Cubecraft"
+    address: "mco.cubecraft.net"
+  - name: "The Hive"
+    address: "geo.hivebedrock.network"
+  # - name: "Galaxite"
+  #   address: "play.galaxite.net" https://github.com/py-mine/mcstatus/issues/433
+  - name: "Pixel Paradise"
+    address: "play.pixelparadise.gg"

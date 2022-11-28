@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: blockgametracker
 spec:
-  replicas: 3
   template:
     metadata:
       name: blockgametracker

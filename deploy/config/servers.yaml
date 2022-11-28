@@ -61,8 +61,6 @@ java:
     address: "fadecloud.com"
   - name: "MCManhunt"
     address: "play.mcmanhunt.com"
-  - name: "Aternos"
-    address: "aternos.me"
   - name: "EnchantMC"
     address: "play.enchantmc.com"
   - name: "CyborgMC"

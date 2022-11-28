@@ -8,8 +8,9 @@ ENV PYTHONFAULTHANDLER=1 \
     PIP_DEFAULT_TIMEOUT=100 \
     POETRY_NO_INTERACTION=1
 
-RUN apk add --no-cache --virtual .python_deps build-base python3-dev libffi-dev bash git && \
+RUN apk add --no-cache --virtual .python_deps build-base python3-dev libffi-dev bash && \
     pip3 install poetry && \
+    apk add --no-cache git && \
     apk del .python_deps && \
     mkdir -p /app/src /app /shared && \
     poetry config virtualenvs.create false

@@ -10,9 +10,9 @@ loguru = "^0.6.0"
 HiYaPyCo = "^0.4.16"
 MarkupSafe = "2.0.1"
 loguru-logging-intercept = "^0.1.1"
-mcstatus = "^9.4.2"
 prometheus-client = "^0.15.0"
 func-timeout = "^4.3.5"
+mcstatus = {git = "https://github.com/clrxbl/mcstatus.git", rev = "3258c80168cf639ec4790251ec575cd6209d7ad3"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

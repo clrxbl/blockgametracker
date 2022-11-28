@@ -103,15 +103,22 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "mcstatus"
-version = "9.4.2"
+version = "0.0.0"
 description = "A library to query Minecraft Servers for their status and capabilities."
 category = "main"
 optional = false
-python-versions = ">=3.7,<4"
+python-versions = ">=3.8,<4"
+develop = false
 
 [package.dependencies]
 asyncio-dgram = "2.1.2"
 dnspython = "2.2.1"
+
+[package.source]
+type = "git"
+url = "https://github.com/clrxbl/mcstatus.git"
+reference = "3258c80168cf639ec4790251ec575cd6209d7ad3"
+resolved_reference = "3258c80168cf639ec4790251ec575cd6209d7ad3"
 
 [[package]]
 name = "prometheus-client"
@@ -146,7 +153,7 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "341c96b470692371ab255eec92d88d4a1793b66621ca5ee75ad98dc64e1a119c"
+content-hash = "06760b8eb8143aab5cb29d79ae649e85793ea6df9bef29e05eb629002de9855f"
 
 [metadata.files]
 asyncio-dgram = [
@@ -250,10 +257,7 @@ MarkupSafe = [
     {file = "MarkupSafe-2.0.1-cp39-cp39-win_amd64.whl", hash = "sha256:693ce3f9e70a6cf7d2fb9e6c9d8b204b6b39897a2c4a1aa65728d5ac97dcc1d8"},
     {file = "MarkupSafe-2.0.1.tar.gz", hash = "sha256:594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"},
 ]
-mcstatus = [
-    {file = "mcstatus-9.4.2-py3-none-any.whl", hash = "sha256:9081e402e3782284d15a804af5170738d79bf44cb14e0beeaa5d5c36ab42eff9"},
-    {file = "mcstatus-9.4.2.tar.gz", hash = "sha256:44f435f5334ad17b7c0156de1d02524a60a7af716c5731da7f5f6054058d0b83"},
-]
+mcstatus = []
 prometheus-client = [
     {file = "prometheus_client-0.15.0-py3-none-any.whl", hash = "sha256:db7c05cbd13a0f79975592d112320f2605a325969b270a94b71dcabc47b931d2"},
     {file = "prometheus_client-0.15.0.tar.gz", hash = "sha256:be26aa452490cfcf6da953f9436e95a9f2b4d578ca80094b4458930e5f584ab1"},

@@ -102,7 +102,7 @@ bedrock:
     address: "mco.cubecraft.net"
   - name: "The Hive"
     address: "geo.hivebedrock.network"
-  # - name: "Galaxite"
-  #   address: "play.galaxite.net" https://github.com/py-mine/mcstatus/issues/433
+  - name: "Galaxite"
+    address: "play.galaxite.net"
   - name: "Pixel Paradise"
     address: "play.pixelparadise.gg"

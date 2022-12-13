@@ -2,10 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockgametracker
+  labels: 
+    app: blockgametracker
 spec:
   template:
     metadata:
       name: blockgametracker
+      labels:
+        app: blockgametracker
     spec:
       dnsPolicy: None
       dnsConfig:
@@ -22,6 +26,13 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /app/config
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: blockgametracker
       imagePullSecrets:
         - name: registry-secret
       restartPolicy: Always

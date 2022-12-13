@@ -43,8 +43,6 @@ java:
     address: "bedwarspractice.club"
   - name: "StickyMC"
     address: "play.stickymc.com"
-  - name: "Mineclub"
-    address: "play.mineclub.com"
   - name: "InvadedLands"
     address: "play.invadedlands.net"
   - name: "Minecraft Central"

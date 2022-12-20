@@ -87,6 +87,8 @@ java:
     address: "server.playmonumenta.com"
   - name: "JackpotMC"
     address: "play.jackpotmc.com"
+  - name: "The Chunk"
+    address: "play.chunkmc.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -61,8 +61,6 @@ java:
     address: "play.mcmanhunt.com"
   - name: "EnchantMC"
     address: "play.enchantmc.com"
-  - name: "CyborgMC"
-    address: "play.cyborgmc.com"
   - name: "The Archon"
     address: "pvp.thearchon.net"
   - name: "Foxcraft"

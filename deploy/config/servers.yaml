@@ -53,8 +53,6 @@ java:
     address: "cylonemc.net"
   - name: "Minr"
     address: "zero.minr.org"
-  - name: "OPBlocks"
-    address: "opblocks.com"
   - name: "Fadecloud"
     address: "fadecloud.com"
   - name: "MCManhunt"

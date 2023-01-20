@@ -85,6 +85,8 @@ java:
     address: "play.jackpotmc.com"
   - name: "Landania"
     address: "landania.net"
+  - name: "DonutSMP"
+    address: "play.donutsmp.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

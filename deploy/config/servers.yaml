@@ -87,6 +87,8 @@ java:
     address: "landania.net"
   - name: "DonutSMP"
     address: "play.donutsmp.net"
+  - name: "Cytooxien"
+    address: "mc.cytooxien.de"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

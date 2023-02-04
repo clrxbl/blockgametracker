@@ -91,6 +91,8 @@ java:
     address: "mc.cytooxien.de"
   - name: "Purity Vanilla"
     address: "purityvanilla.com"
+  - name: "Stray"
+    address: "stray.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

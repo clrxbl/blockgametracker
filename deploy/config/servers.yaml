@@ -31,8 +31,6 @@ java:
     address: "play.gommehd.net"
   - name: "Shotbow"
     address: "play.shotbow.net"
-  - name: "CosmicPvP"
-    address: "play.cosmicpvp.com"
   - name: "Wynncraft"
     address: "play.wynncraft.net"
   - name: "OPLegends"

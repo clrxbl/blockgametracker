@@ -91,6 +91,8 @@ java:
     address: "purityvanilla.com"
   - name: "Stray"
     address: "stray.gg"
+  - name: "TerraeMC"
+    address: "play.terraemc.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

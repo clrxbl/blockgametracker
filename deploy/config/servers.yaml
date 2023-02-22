@@ -93,6 +93,8 @@ java:
     address: "stray.gg"
   - name: "TerraeMC"
     address: "play.terraemc.net"
+  - name: "LifestealSMP"
+    address: "lifestealsmp.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -95,6 +95,8 @@ java:
     address: "play.terraemc.net"
   - name: "LifestealSMP"
     address: "lifestealsmp.com"
+  - name: "InsanityCraft"
+    address: "play.insanitycraft.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -103,6 +103,8 @@ java:
     address: "mc.cosmosmc.org"
   - name: "ChillSMP"
     address: "mc.chillsmp.org"
+  - name: "The Chunk"
+    address: "play.chunkmc.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

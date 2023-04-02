@@ -99,6 +99,10 @@ java:
     address: "play.insanitycraft.net"
   - name: "HibiscusMC"
     address: "play.hibiscusmc.com"
+  - name: "CosmosMC"
+    address: "mc.cosmosmc.org"
+  - name: "ChillSMP"
+    address: "mc.chillsmp.org"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

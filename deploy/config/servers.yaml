@@ -105,6 +105,8 @@ java:
     address: "mc.chillsmp.org"
   - name: "The Chunk"
     address: "play.chunkmc.com"
+  - name: "Simple Survival"
+    address: "play.simplesurvival.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

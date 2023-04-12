@@ -4,8 +4,7 @@ metadata:
   name: blockgametracker
 spec:
   selector:
-    matchLabels:
-      app: blockgametracker
+    matchLabels: {}
   endpoints:
     - port: metrics
       interval: 15s

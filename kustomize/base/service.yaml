@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: blockgametracker
 spec:
-  selector:
-    app: blockgametracker
   ports:
     - name: metrics
       port: 8080

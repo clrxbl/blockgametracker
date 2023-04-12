@@ -2,24 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: blockgametracker
-  labels: 
-    app: blockgametracker
 spec:
   template:
-    metadata:
-      name: blockgametracker
-      labels:
-        app: blockgametracker
     spec:
-      dnsPolicy: None
-      dnsConfig:
-        nameservers: # Override Kubernetes DNS
-          - 1.1.1.1
-          - 1.0.0.1
-          - 8.8.8.8
       containers:
         - name: app
-          image: ghcr.io/clrxbl/blockgametracker:latest
+          image: blockgametracker
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -31,15 +19,9 @@ spec:
           topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
-            matchLabels:
-              app: blockgametracker
-      imagePullSecrets:
-        - name: registry-secret
+            matchLabels: {}
       restartPolicy: Always
       volumes:
         - name: config
           configMap:
             name: blockgametracker
-  selector:
-    matchLabels:
-      app: blockgametracker

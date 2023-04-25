@@ -1,4 +1,6 @@
 java:
+  - name: "GommeHD"
+    address: "GommeHD.net"
   - name: "MCC Island"
     address: "play.mccisland.net"
   - name: "Tubnet"

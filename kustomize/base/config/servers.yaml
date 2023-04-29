@@ -109,6 +109,8 @@ java:
     address: "play.simplesurvival.gg"
   - name: "Xenyria"
     address: "xenyria.net"
+  - name: "DiamondFire"
+    address: "mcdiamondfire.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

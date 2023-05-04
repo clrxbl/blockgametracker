@@ -111,6 +111,8 @@ java:
     address: "xenyria.net"
   - name: "DiamondFire"
     address: "mcdiamondfire.com"
+  - name: "MineFreeze"
+    address: "play.minefreeze.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

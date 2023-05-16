@@ -79,8 +79,6 @@ java:
     address: "server.playmonumenta.com"
   - name: "JackpotMC"
     address: "play.jackpotmc.com"
-  - name: "Landania"
-    address: "landania.net"
   - name: "DonutSMP"
     address: "play.donutsmp.net"
   - name: "Cytooxien"

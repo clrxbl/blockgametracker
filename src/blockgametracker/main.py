@@ -5,6 +5,9 @@ import hiyapyco
 import pathlib
 import time
 import asyncio
+import ipaddress
+import cachetools
+from aslookup import get_as_data
 from loguru import logger
 from func_timeout import func_set_timeout, FunctionTimedOut
 from dataclasses import dataclass
@@ -16,6 +19,7 @@ from timeit import default_timer as timer
 from enum import Enum
 
 CONFIG_FILE = os.getenv("CONFIG_FILE", "config/servers.yaml")
+as_data_cache = cachetools.TTLCache(maxsize=256, ttl=3600)
 
 class MinecraftServerEdition(Enum):
   """
@@ -45,6 +49,24 @@ class MinecraftServerList:
       raise
 
 
+def retrieve_as_data(ip):
+  """
+  Retrieve AS data from cache or API
+  """
+
+  logger.debug(as_data_cache)
+  for prefix in as_data_cache:
+    if ipaddress.ip_address(ip) in ipaddress.ip_network(prefix):
+      return as_data_cache[prefix]
+
+  try:
+    as_data = get_as_data(ip, service="shadowserver")
+    as_data_cache[as_data.prefix] = as_data
+    return as_data
+  except Exception as e:
+    logger.error(f"Failed to get ASN for {ip}: {e}")
+    return
+
 @dataclass
 class MinecraftServer:
   """
@@ -57,6 +79,8 @@ class MinecraftServer:
   port: int = None # We don't want to set a port otherwise mcstatus does not do SRV lookups
   playercount: int = None
   version: int = None
+  as_number: int = None
+  as_name: str = None
 
   @func_set_timeout(1)
   async def query(self):
@@ -84,6 +108,16 @@ class MinecraftServer:
       logger.error(f"{self} failed to query: {e}")
       await logger.complete()
       return
+
+    try:
+      ip = str(server.address.resolve_ip()).strip()
+      as_data = retrieve_as_data(ip)
+      logger.debug(as_data)
+      self.as_number = as_data.asn
+      self.as_name = as_data.as_name
+    except Exception as e:
+      logger.warning(f"Failed to get ASN for {self}: {e}")
+      pass
 
     self.version = int(status.version.protocol)
     if self.edition == MinecraftServerEdition.BEDROCK:
@@ -134,7 +168,7 @@ class MinecraftCollector(object):
 
   def collect(self):
     gauge = GaugeMetricFamily("minecraft_status_players_online_count", "Minecraft server online player counts",
-            labels=["server_edition", "server_name", "server_host", "server_version"])
+            labels=["server_edition", "server_name", "server_host", "server_version", "as_number", "as_name"])
 
     for edition in MinecraftServerEdition:
       try:
@@ -149,7 +183,7 @@ class MinecraftCollector(object):
 
         for server in metrics:
           if server.version is not None and server.playercount is not None:
-            gauge.add_metric([server.edition.value, server.name, server.address, str(server.version)], server.playercount)
+            gauge.add_metric([server.edition.value, server.name, server.address, str(server.version), server.as_number, server.as_name], server.playercount)
           else:
             logger.warning(f"{server} did not return any metrics, not adding to gauge")
         end = timer()

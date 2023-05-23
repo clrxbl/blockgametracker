@@ -12,7 +12,9 @@ MarkupSafe = "2.0.1"
 loguru-logging-intercept = "^0.1.1"
 prometheus-client = "^0.15.0"
 func-timeout = "^4.3.5"
-mcstatus = {git = "https://github.com/clrxbl/mcstatus.git", rev = "3258c80168cf639ec4790251ec575cd6209d7ad3"}
+mcstatus = "^10.0.3"
+aslookup = "^1.5.0"
+cachetools = "^5.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

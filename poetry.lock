@@ -44,6 +44,18 @@ files = [
 ]
 
 [[package]]
+name = "chardet"
+version = "5.1.0"
+description = "Universal encoding detector for Python 3"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "chardet-5.1.0-py3-none-any.whl", hash = "sha256:362777fb014af596ad31334fde1e8c327dfdb076e1960d1694662d46a6917ab9"},
+    {file = "chardet-5.1.0.tar.gz", hash = "sha256:0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"},
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -54,6 +66,23 @@ files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
 ]
+
+[[package]]
+name = "dns-cache"
+version = "0.3.0"
+description = "DNS lookup cache for Python using dnspython"
+category = "main"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
+files = [
+    {file = "dns-cache-0.3.0.tar.gz", hash = "sha256:9b090688161b14cfbb78555eb94682639c502adcfd226671c7cccadb968e1890"},
+    {file = "dns_cache-0.3.0-py2.py3-none-any.whl", hash = "sha256:d2f692b880b48f651fe8560d96d69e42473c46764764f2e4df5d985d542421db"},
+]
+
+[package.dependencies]
+dnspython = "*"
+ProxyTypes = "*"
+reconfigure = "*"
 
 [[package]]
 name = "dnspython"
@@ -264,6 +293,19 @@ files = [
 twisted = ["twisted"]
 
 [[package]]
+name = "proxytypes"
+version = "0.10.0"
+description = "General purpose proxy and wrapper types"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ProxyTypes-0.10.0-py2-none-any.whl", hash = "sha256:83e5bb089cccb23087c6e3c5d71dda9fca351b624ca5de709fddcf58dab84c84"},
+    {file = "ProxyTypes-0.10.0-py3-none-any.whl", hash = "sha256:f3bf78debafe15d8ccb31a0c909f820408bb678532a8be8bf737ddd50c03f298"},
+    {file = "ProxyTypes-0.10.0.tar.gz", hash = "sha256:82cc41d5e7c913982b505241c7c87448ed26b6884a40c2889f2ee19d06339985"},
+]
+
+[[package]]
 name = "pytricia"
 version = "1.0.2"
 description = "An efficient IP address storage and lookup module for Python."
@@ -326,6 +368,20 @@ files = [
 ]
 
 [[package]]
+name = "reconfigure"
+version = "0.1.82"
+description = "An ORM for config files"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "reconfigure-0.1.82.tar.gz", hash = "sha256:69dded9fdf2f060fb46fd201fef76e2af69b4ace5d63797cdfc8c430886aebff"},
+]
+
+[package.dependencies]
+chardet = "*"
+
+[[package]]
 name = "win32-setctime"
 version = "1.1.0"
 description = "A small Python utility to set file creation time on Windows"
@@ -343,4 +399,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "73b1e0613333a9a1389e95a5200932f5707ff3bf44553583ed6ed6ac18192593"
+content-hash = "72be905628d0cb0851679b1ddea346f2bc0226ac84afe7aa0f79685ff16b83cf"

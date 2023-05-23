@@ -7,6 +7,7 @@ import time
 import asyncio
 import ipaddress
 import cachetools
+import dns_cache
 from aslookup import get_as_data
 from loguru import logger
 from func_timeout import func_set_timeout, FunctionTimedOut
@@ -20,6 +21,7 @@ from enum import Enum
 
 CONFIG_FILE = os.getenv("CONFIG_FILE", "config/servers.yaml")
 as_data_cache = cachetools.TTLCache(maxsize=256, ttl=3600)
+dns_cache.override_system_resolver()
 
 class MinecraftServerEdition(Enum):
   """

@@ -15,6 +15,7 @@ func-timeout = "^4.3.5"
 mcstatus = "^10.0.3"
 aslookup = "^1.5.0"
 cachetools = "^5.3.0"
+dns-cache = "^0.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -19,17 +19,11 @@ ADD pyproject.toml /app/pyproject.toml
 WORKDIR /app
 
 RUN poetry export --dev --without-hashes --no-interaction --no-ansi -f requirements.txt -o requirements.txt && \
-    pip install --prefix=/runtime --force-reinstall -r requirements.txt
+    pip install --force-reinstall -r requirements.txt && \
+    apk del .python_deps
 
 ADD src /app/src
 
-FROM gcr.io/distroless/python3-debian11
-
-ENV PYTHONPATH=/usr/local/lib/python3.9/site-packages
-
-COPY --from=build-env /runtime /usr/local
-
-ADD src /app/src
 WORKDIR /app
 
 ENTRYPOINT python3 /app/src/blockgametracker/main.py

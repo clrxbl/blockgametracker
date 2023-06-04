@@ -112,7 +112,7 @@ java:
   - name: "MineFreeze"
     address: "play.minefreeze.net"
   - name: "Timolia"
-    adress: "play.timolia.de"
+    address: "play.timolia.de"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

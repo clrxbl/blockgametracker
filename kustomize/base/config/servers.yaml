@@ -113,6 +113,8 @@ java:
     address: "play.minefreeze.net"
   - name: "Timolia"
     address: "play.timolia.de"
+  - name: "Sunblock"
+    address: "sunblock.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

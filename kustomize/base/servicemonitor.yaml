@@ -7,5 +7,6 @@ spec:
     matchLabels: {}
   endpoints:
     - port: metrics
-      interval: 15s
+      interval: 30s
+      scrapeTimeout: 30s
       path: /metrics

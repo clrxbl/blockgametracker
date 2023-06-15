@@ -115,6 +115,10 @@ java:
     address: "play.timolia.de"
   - name: "Sunblock"
     address: "sunblock.gg"
+  - name: "KiwiSMP"
+    address: "play.kiwismp.fun"
+  - name: "MineSuperior"
+    address: "hub.mcs.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

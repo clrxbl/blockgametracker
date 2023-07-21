@@ -19,7 +19,7 @@ from mcstatus import JavaServer, BedrockServer
 from timeit import default_timer as timer
 from enum import Enum
 
-CONFIG_FILE = os.getenv("CONFIG_FILE", "config/servers.yaml")
+CONFIG_FILE = os.getenv("CONFIG_FILE", "kustomize/base/config/servers.yaml")
 as_data_cache = cachetools.TTLCache(maxsize=256, ttl=3600)
 dns_cache.override_system_resolver()
 
@@ -123,7 +123,7 @@ class MinecraftServer:
 
     self.version = int(status.version.protocol)
     if self.edition == MinecraftServerEdition.BEDROCK:
-      self.playercount = int(status.players_online)
+      self.playercount = int(status.players.online)
     else:
       self.playercount = int(status.players.online)
 

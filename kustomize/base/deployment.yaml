@@ -9,6 +9,9 @@ spec:
         - name: app
           image: blockgametracker
           imagePullPolicy: Always
+          env:
+            - name: CONFIG_FILE
+              value: "config/servers.yaml"
           ports:
             - containerPort: 8080
           volumeMounts:

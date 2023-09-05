@@ -121,6 +121,8 @@ java:
     address: "hub.mcs.gg"
   - name: "Freakyville"
     address: "mc.freakyville.net"
+  - name: "PokeFind"
+    address: "play.pokefind.co"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

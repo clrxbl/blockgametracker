@@ -123,6 +123,8 @@ java:
     address: "mc.freakyville.net"
   - name: "PokeFind"
     address: "play.pokefind.co"
+  - name: "Hideaway"
+    address: "playhideaway.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

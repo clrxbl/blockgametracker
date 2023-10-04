@@ -62,7 +62,7 @@ def retrieve_as_data(ip):
       return as_data_cache[prefix]
 
   try:
-    as_data = get_as_data(ip, service="shadowserver")
+    as_data = get_as_data(ip, service="cymru")
     as_data_cache[as_data.prefix] = as_data
     return as_data
   except Exception as e:

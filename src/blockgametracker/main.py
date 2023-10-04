@@ -62,7 +62,7 @@ def retrieve_as_data(ip):
       return as_data_cache[prefix]
 
   try:
-    as_data = get_as_data(ip, service="cymru")
+    as_data = get_as_data(ip, service="shadowserver")
     as_data_cache[as_data.prefix] = as_data
     return as_data
   except Exception as e:
@@ -81,8 +81,8 @@ class MinecraftServer:
   port: int = None # We don't want to set a port otherwise mcstatus does not do SRV lookups
   playercount: int = None
   version: int = None
-  as_number: int = None
-  as_name: str = None
+  as_number: int = 0
+  as_name: str = "N/A"
 
   @func_set_timeout(1)
   async def query(self):
@@ -119,8 +119,6 @@ class MinecraftServer:
       self.as_name = as_data.as_name
     except Exception as e:
       logger.warning(f"Failed to get ASN for {self}: {e}")
-      self.as_number = None
-      self.as_name = None
       pass
 
     self.version = int(status.version.protocol)
@@ -187,7 +185,7 @@ class MinecraftCollector(object):
 
         for server in metrics:
           if server.version is not None and server.playercount is not None:
-            gauge.add_metric([server.edition.value, server.name, server.address, str(server.version), server.as_number, server.as_name], server.playercount)
+            gauge.add_metric([server.edition.value, server.name, server.address, str(server.version), str(server.as_number), server.as_name], server.playercount)
           else:
             logger.warning(f"{server} did not return any metrics, not adding to gauge")
         end = timer()

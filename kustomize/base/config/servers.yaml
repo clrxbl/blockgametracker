@@ -125,6 +125,8 @@ java:
     address: "play.pokefind.co"
   - name: "Hideaway"
     address: "playhideaway.com"
+  - name: "Hoplite"
+    address: "hoplite.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

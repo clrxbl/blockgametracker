@@ -127,6 +127,8 @@ java:
     address: "playhideaway.com"
   - name: "Hoplite"
     address: "hoplite.gg"
+  - name: "CatCraft"
+    address: "mc.catcraft.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

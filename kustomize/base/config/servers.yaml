@@ -131,6 +131,8 @@ java:
     address: "mc.catcraft.net"
   - name: "PlayLegend"
     address: "playlegend.net"
+  - name: "Lifesteal"
+    address: "play.lifesteal.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

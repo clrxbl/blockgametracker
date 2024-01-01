@@ -1,4 +1,8 @@
 java:
+  - name: "UniversoCraft"
+    address: "mc.universocraft.com"
+  - name: "KoksCraft"
+    address: "kokscraft.pl"
   - name: "MCC Island"
     address: "play.mccisland.net"
   - name: "Tubnet"

@@ -128,10 +128,7 @@ class MinecraftServer:
       pass
 
     self.version = int(status.version.protocol)
-    if self.edition == MinecraftServerEdition.BEDROCK:
-      self.playercount = int(status.players.online)
-    else:
-      self.playercount = int(status.players.online)
+    self.playercount = int(status.players.online)
 
     end = timer()
     logger.info(f"Queried {self.name} ({self.address}) in {round((end - start), 2)} seconds")

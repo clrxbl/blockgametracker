@@ -133,6 +133,10 @@ java:
     address: "playlegend.net"
   - name: "Lifesteal"
     address: "play.lifesteal.net"
+  - name: "Overcast"
+    address: "play.oc.tc"
+  - name: "Hielke Maps Network"
+    address: "play.hielkemaps.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -133,6 +133,8 @@ java:
     address: "playlegend.net"
   - name: "Lifesteal"
     address: "play.lifesteal.net"
+  - name: "Vortex Network"
+    address: "mc.vortexnetwork.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

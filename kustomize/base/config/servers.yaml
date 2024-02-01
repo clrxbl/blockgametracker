@@ -1,12 +1,8 @@
 java:
   - name: "MCC Island"
     address: "play.mccisland.net"
-  - name: "Tubnet"
-    address: "tubnet.gg"
   - name: "Hypixel"
     address: "mc.hypixel.net"
-  - name: "Mineplex"
-    address: "mineplex.com"
   - name: "Cubecraft"
     address: "play.cubecraft.net"
   - name: "Minehut"

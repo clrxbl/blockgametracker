@@ -137,6 +137,10 @@ java:
     address: "play.oc.tc"
   - name: "Hielke Maps Network"
     address: "play.hielkemaps.com"
+  - name: "Nucleoid"
+    address: "nucleoid.xyz"
+  - name: "CubeKrowd"
+    address: "cubekrowd.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

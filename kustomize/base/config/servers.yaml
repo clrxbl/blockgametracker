@@ -137,6 +137,8 @@ java:
     address: "nucleoid.xyz"
   - name: "CubeKrowd"
     address: "cubekrowd.net"
+  - name: "PvPGym"
+    address: "pvpgym.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

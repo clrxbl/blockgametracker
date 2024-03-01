@@ -90,7 +90,7 @@ java:
   - name: "LifestealSMP"
     address: "lifestealsmp.com"
   - name: "InsanityCraft"
-    address: "play.insanitycraft.net"
+    address: "mc.insanitycraft.net"
   - name: "HibiscusMC"
     address: "play.hibiscusmc.com"
   - name: "CosmosMC"

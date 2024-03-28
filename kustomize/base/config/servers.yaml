@@ -15,7 +15,7 @@ java:
     address: "play.manacube.com"
   - name: "Loka"
     address: "play.lokamc.com"
-  - name: "Lemoncloud"
+  - name: "LemonCloud"
     address: "play.lemoncloud.org"
   - name: "Complex Gaming"
     address: "hub.mc-complex.com"

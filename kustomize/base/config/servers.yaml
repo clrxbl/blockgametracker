@@ -131,6 +131,10 @@ java:
     address: "cubekrowd.net"
   - name: "PvPGym"
     address: "pvpgym.net"
+  - name: "FreshSMP"
+    address: "play.freshsmp.fun"
+  - name: "BendersMC"
+    address: "play.bendersmc.co"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

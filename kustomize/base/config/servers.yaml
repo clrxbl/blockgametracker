@@ -135,6 +135,8 @@ java:
     address: "play.freshsmp.fun"
   - name: "BendersMC"
     address: "play.bendersmc.co"
+  - name: "FishOnMC"
+    address: "play.fishonmc.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

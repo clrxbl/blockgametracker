@@ -137,6 +137,8 @@ java:
     address: "play.bendersmc.co"
   - name: "FishOnMC"
     address: "play.fishonmc.net"
+  - name: "OG Network"
+    address: "og-network.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

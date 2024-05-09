@@ -1,4 +1,4 @@
-FROM python:3.9-alpine3.15 AS build-env
+FROM python:3.12-alpine AS build-env
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \

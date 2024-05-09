@@ -139,6 +139,39 @@ java:
     address: "play.fishonmc.net"
   - name: "OG Network"
     address: "og-network.net"
+  - name: "CosmicPVP"
+    address: "cosmicpvp.me"
+    disabled: true
+  - name: "HiveMC"
+    address: "play.hivemc.com"
+    disabled: true
+  - name: "Mineplex"
+    address: "us.mineplex.com"
+    disabled: true
+  - name: "Landania"
+    address: "landania.net"
+    disabled: true
+  - name: "MineSuperior"
+    address: "hub.mcs.gg"
+    disabled: true
+  - name: "Mineclub"
+    address: "play.mineclub.com"
+    disabled: true
+  - name: "Tubnet"
+    address: "mc.tubnet.gg"
+    disabled: true
+  - name: "The Chunk"
+    address: "play.chunkmc.com"
+    disabled: true
+  - name: "Sunblock"
+    address: "sunblock.gg"
+    disabled: true
+  - name: "Chasecraft"
+    address: "play.chasecraft.gg"
+    disabled: true
+  - name: "Minecraft Central"
+    address: "mccentral.org"
+    disabled: true
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"
@@ -152,3 +185,6 @@ bedrock:
     address: "play.galaxite.net"
   - name: "Enchanted Dragons"
     address: "play.enchanted.gg"
+  - name: "Mineplex"
+    address: "mco.mineplex.com"
+    disabled: true

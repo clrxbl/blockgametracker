@@ -11,8 +11,8 @@ from timeit import default_timer as timer
 
 import cachetools
 import dns_cache
-import hiyapyco
 import mcstatus.motd
+import yaml
 from aslookup import get_as_data
 from func_timeout import FunctionTimedOut, func_set_timeout
 from loguru import logger
@@ -50,10 +50,20 @@ class MinecraftServerList:
     servers: dict = None
 
     def __post_init__(self):
-        config = hiyapyco.load(CONFIG_FILE)
+        with open(CONFIG_FILE, "r") as f:
+            try:
+                config = yaml.safe_load(f)
+            except yaml.YAMLError as e:
+                logger.error(e)
+                sys.exit(1)
+
         try:
             logger.debug(self.edition.value)
             self.servers = config[f"{self.edition.value}"]
+
+            for server in self.servers:
+                if server.get("disabled", False):
+                    self.servers.remove(server)
         except KeyError:
             logger.warning(
                 f"Could not find {self.edition.value} servers in config file"
@@ -151,7 +161,9 @@ async def collect_metrics(sem, edition, server):
 
     async with sem:
         server = MinecraftServer(
-            edition=edition, name=server["name"], address=server["address"]
+            edition=edition,
+            name=server["name"],
+            address=server["address"],
         )
 
         try:

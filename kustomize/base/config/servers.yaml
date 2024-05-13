@@ -139,6 +139,8 @@ java:
     address: "play.fishonmc.net"
   - name: "OG Network"
     address: "og-network.net"
+  - name: "LeoneMC"
+    address: "play.leonemc.net"
   - name: "CosmicPVP"
     address: "cosmicpvp.me"
     disabled: true

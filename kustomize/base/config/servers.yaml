@@ -134,6 +134,7 @@ java:
   - name: "FreshSMP"
     address: "play.freshsmp.fun"
   - name: "BendersMC"
+    disabled: true
     address: "play.bendersmc.co"
   - name: "FishOnMC"
     address: "play.fishonmc.net"

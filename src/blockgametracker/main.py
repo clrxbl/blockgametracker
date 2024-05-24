@@ -98,6 +98,7 @@ class MinecraftServer:
 
     edition: MinecraftServerEdition = MinecraftServerEdition.JAVA
     name: str = "Minecraft server"
+    slug: str = "minecraft-server"
     address: str = "127.0.0.1"
     port: int = (
         None  # We don't want to set a port otherwise mcstatus does not do SRV lookups
@@ -160,9 +161,11 @@ async def collect_metrics(sem, edition, server):
     """
 
     async with sem:
+        slug = server["name"].replace(" ", "-").lower()
         server = MinecraftServer(
             edition=edition,
             name=server["name"],
+            slug=slug,
             address=server["address"],
         )
 
@@ -202,6 +205,7 @@ class MinecraftCollector(object):
             labels=[
                 "server_edition",
                 "server_name",
+                "server_slug",
                 "server_host",
                 "server_version",
                 "as_number",
@@ -230,6 +234,7 @@ class MinecraftCollector(object):
                             [
                                 server.edition.value,
                                 server.name,
+                                server.slug,
                                 server.address,
                                 str(server.version),
                                 str(server.as_number),

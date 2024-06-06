@@ -53,6 +53,7 @@ java:
     address: "play.enchantmc.com"
   - name: "The Archon"
     address: "pvp.thearchon.net"
+    disabled: true
   - name: "Foxcraft"
     address: "mc.foxcraft.net"
   - name: "Performium"

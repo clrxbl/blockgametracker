@@ -60,10 +60,9 @@ class MinecraftServerList:
         try:
             logger.debug(self.edition.value)
             self.servers = config[f"{self.edition.value}"]
-
-            for server in self.servers:
-                if server.get("disabled", False):
-                    self.servers.remove(server)
+            self.servers = [
+                server for server in self.servers if not server.get("disabled", False)
+            ]
         except KeyError:
             logger.warning(
                 f"Could not find {self.edition.value} servers in config file"

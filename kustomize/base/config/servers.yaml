@@ -41,6 +41,8 @@ java:
     address: "play.invadedlands.net"
   - name: "PvP Legacy"
     address: "play.pvplegacy.net"
+  - name: "PvPWars"
+    address: "pvpwars.net"
   - name: "CyloneMC"
     address: "cylonemc.net"
   - name: "Minr"

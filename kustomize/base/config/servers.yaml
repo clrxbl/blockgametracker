@@ -76,6 +76,8 @@ java:
     address: "server.playmonumenta.com"
   - name: "JackpotMC"
     address: "play.jackpotmc.com"
+  - name: "VivSMP
+    address: "vivilly.net"
   - name: "DonutSMP"
     address: "play.donutsmp.net"
   - name: "Cytooxien"
@@ -191,6 +193,8 @@ bedrock:
     address: "play.galaxite.net"
   - name: "Enchanted Dragons"
     address: "play.enchanted.gg"
+  - name: "VivSMP
+    address: "vivilly.net"
   - name: "Mineplex"
     address: "mco.mineplex.com"
     disabled: true

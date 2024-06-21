@@ -145,6 +145,12 @@ java:
     address: "og-network.net"
   - name: "LeoneMC"
     address: "play.leonemc.net"
+  - name: "Faceland"
+    address: "beta.face.land"
+  - name: "Skyblock Isles"
+    address: "skyblockisles.net"
+  - name: "Hollow Cube"
+    address: "play.hollowcube.net"
   - name: "CosmicPVP"
     address: "cosmicpvp.me"
     disabled: true

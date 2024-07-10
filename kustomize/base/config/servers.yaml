@@ -149,6 +149,8 @@ java:
     address: "vivilly.net"
   - name: "Hollow Cube"
     address: "play.hollowcube.net"
+  - name: "MineSurvive"
+    address: "play.minesurvive.com"
   - name: "CosmicPVP"
     address: "cosmicpvp.me"
     disabled: true

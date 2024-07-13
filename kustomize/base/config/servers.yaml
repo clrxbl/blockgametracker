@@ -188,6 +188,8 @@ java:
   - name: "Minecraft Central"
     address: "mccentral.org"
     disabled: true
+  - name: "Guster Network"
+    address: "guster.ro"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

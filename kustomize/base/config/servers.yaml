@@ -188,6 +188,8 @@ java:
   - name: "Minecraft Central"
     address: "mccentral.org"
     disabled: true
+  - name: "BlossomSMP"
+    address: "play.blossomsmp.org"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

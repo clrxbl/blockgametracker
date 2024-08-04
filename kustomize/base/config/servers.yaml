@@ -19,6 +19,8 @@ java:
     address: "play.lemoncloud.org"
   - name: "Complex Gaming"
     address: "hub.mc-complex.com"
+  - name: "Cosmic Sky"
+    address: "cosmicsky.net"
   - name: "AkumaMC"
     address: "akumamc.net"
   - name: "Origin Realms"
@@ -53,6 +55,8 @@ java:
     address: "play.mcmanhunt.com"
   - name: "EnchantMC"
     address: "play.enchantmc.com"
+  - name: "OneBlockMC"
+    address: "org.oneblockmc.com"
   - name: "The Archon"
     address: "pvp.thearchon.net"
     disabled: true

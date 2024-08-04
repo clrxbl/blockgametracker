@@ -55,6 +55,10 @@ java:
     address: "play.mcmanhunt.com"
   - name: "EnchantMC"
     address: "play.enchantmc.com"
+  - name: "EnchantedMC"
+    address: "play.enchantedmc.net"
+  - name: "OneBlockMC"
+    address: "org.oneblockmc.com"
   - name: "The Archon"
     address: "pvp.thearchon.net"
     disabled: true

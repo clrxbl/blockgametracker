@@ -194,6 +194,8 @@ java:
     disabled: true
   - name: "BlossomSMP"
     address: "play.blossomsmp.org"
+  - name: "SpeedVanilla
+    adress: "speedvanilla.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

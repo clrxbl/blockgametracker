@@ -31,6 +31,8 @@ java:
     address: "play.shotbow.net"
   - name: "Wynncraft"
     address: "play.wynncraft.com"
+  - name: "NebulaMC"
+    address: "play.nebulamc.gg"
   - name: "OPLegends"
     address: "play.oplegends.com"
   - name: "Minemen Club"

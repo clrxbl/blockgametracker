@@ -198,6 +198,8 @@ java:
     address: "play.blossomsmp.org"
   - name: "TallTalesRP"
     address: "talltalesrp.net"
+  - name: "Telos Realms"
+    address: "telosrealms.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

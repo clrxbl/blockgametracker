@@ -96,6 +96,7 @@ java:
     address: "lifestealsmp.com"
   - name: "InsanityCraft"
     address: "mc.insanitycraft.net"
+    disabled: true
   - name: "HibiscusMC"
     address: "play.hibiscusmc.com"
   - name: "CosmosMC"

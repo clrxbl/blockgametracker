@@ -201,6 +201,8 @@ java:
     address: "talltalesrp.net"
   - name: "Telos Realms"
     address: "telosrealms.com"
+  - name: "MC Brawls"
+    address: "play.mcbrawls.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

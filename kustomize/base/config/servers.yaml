@@ -203,6 +203,8 @@ java:
     address: "telosrealms.com"
   - name: "MC Brawls"
     address: "play.mcbrawls.net"
+  - name: "FunnieWars"
+    address: "funniewars.live"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -205,6 +205,8 @@ java:
     address: "play.mcbrawls.net"
   - name: "Minebox"
     address: "play.minebox.co"
+  - name: "MarsMC"
+    address: "marsmc.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

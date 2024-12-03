@@ -221,3 +221,5 @@ bedrock:
   - name: "Mineplex"
     address: "mco.mineplex.com"
     disabled: true
+  - name: "NetherGames"
+    address: "play.nethergames.org"

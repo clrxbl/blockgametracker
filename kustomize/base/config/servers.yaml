@@ -207,6 +207,10 @@ java:
     address: "play.minebox.co"
   - name: "HorizonMines" 
     address: "HorizonMines.net"  
+  - name: "SuperAwesome" 
+    address: "superawesome.dk"  
+  - name: "MineClub.dk" 
+    address: "mineclub.dk"  
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

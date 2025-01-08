@@ -211,6 +211,8 @@ java:
     address: "superawesome.dk"  
   - name: "MineClub.dk" 
     address: "mineclub.dk"  
+  - name: "RainyDay"
+    address: "rainyday.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

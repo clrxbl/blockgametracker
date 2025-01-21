@@ -35,6 +35,7 @@ java:
     address: "play.nebulamc.gg"
   - name: "OPLegends"
     address: "play.oplegends.com"
+    disabled: true
   - name: "Minemen Club"
     address: "minemen.club"
   - name: "Bedwars Practice"

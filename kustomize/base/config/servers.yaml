@@ -210,6 +210,8 @@ java:
     address: "HorizonMines.net"  
   - name: "RainyDay"
     address: "rainyday.gg"
+  - name: "UHC World"
+    address: "mc.uhcworld.fr"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

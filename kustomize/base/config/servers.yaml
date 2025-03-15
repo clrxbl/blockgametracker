@@ -216,6 +216,8 @@ java:
     address: "play.bingomc.net"
   - name: "Skyblock.XYZ"
     address: "skyblock.xyz"
+  - name: "Cobblemon Islands"
+    address: "play.cobblemonislands.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

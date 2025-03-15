@@ -163,8 +163,6 @@ java:
     address: "play.hollowcube.net"
   - name: "MineSurvive"
     address: "play.minesurvive.com"
-  - name: "BingoMC"
-    address: "play.bingomc.net"
   - name: "CosmicPVP"
     address: "cosmicpvp.me"
     disabled: true
@@ -214,6 +212,10 @@ java:
     address: "rainyday.gg"
   - name: "BreezeSMP"
     address: "play.breezesmp.com"
+  - name: "BingoMC"
+    address: "play.bingomc.net"
+  - name: "Skyblock.XYZ"
+    address: "skyblock.xyz"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

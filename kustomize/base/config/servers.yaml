@@ -163,6 +163,8 @@ java:
     address: "play.hollowcube.net"
   - name: "MineSurvive"
     address: "play.minesurvive.com"
+  - name: "BingoMC"
+    address: "play.bingomc.net"
   - name: "CosmicPVP"
     address: "cosmicpvp.me"
     disabled: true

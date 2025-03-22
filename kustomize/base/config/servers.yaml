@@ -218,6 +218,8 @@ java:
     address: "skyblock.xyz"
   - name: "Cobblemon Islands"
     address: "play.cobblemonislands.com"
+  - name: "Walmart Skyward"
+    address: "playskyward.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

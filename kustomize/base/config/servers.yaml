@@ -1,6 +1,8 @@
 java:
   - name: "MCC Island"
     address: "play.mccisland.net"
+  - name: "TavernMC"
+    address: "tavernmc.net"    
   - name: "Hypixel"
     address: "mc.hypixel.net"
   - name: "Cubecraft"

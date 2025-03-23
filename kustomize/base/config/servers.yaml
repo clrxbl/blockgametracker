@@ -220,6 +220,8 @@ java:
     address: "play.cobblemonislands.com"
   - name: "Walmart Skyward"
     address: "playskyward.gg"
+  - name: "BlockHero"
+    address: "play.blockhero.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

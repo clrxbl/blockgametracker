@@ -222,6 +222,8 @@ java:
     address: "playskyward.gg"
   - name: "BlockHero"
     address: "play.blockhero.net"
+  - name: "FlameFrags"
+    address: "play.flamefrags.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

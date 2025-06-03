@@ -224,6 +224,10 @@ java:
     address: "play.blockhero.net"
   - name: "FlameFrags"
     address: "play.flamefrags.com"
+  - name: "CloudHaven"
+    address: "play.cloudhaven.gg"
+  - name: "OneBlock Odyssey"
+    address: "obomc.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

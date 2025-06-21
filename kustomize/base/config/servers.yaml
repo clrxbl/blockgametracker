@@ -224,6 +224,10 @@ java:
     address: "play.blockhero.net"
   - name: "FlameFrags"
     address: "play.flamefrags.com"
+  - name: "CatPvP"
+    address: "catpvp.xyz"
+  - name: "PvP Club"
+    address: "mcpvp.club"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

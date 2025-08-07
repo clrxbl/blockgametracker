@@ -228,6 +228,8 @@ java:
     address: "catpvp.xyz"
   - name: "PvP Club"
     address: "mcpvp.club"
+  - name: "Mine in Abyss"
+    address: "survival.mineinabyss.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

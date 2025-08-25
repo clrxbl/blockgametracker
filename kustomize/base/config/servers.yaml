@@ -230,6 +230,10 @@ java:
     address: "mcpvp.club"
   - name: "Mine in Abyss"
     address: "survival.mineinabyss.com"
+  - name: "StarNet"
+    address: "play.starnet.gg"
+  - name: "Spellbrook"
+    address: "play.spellbrook.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

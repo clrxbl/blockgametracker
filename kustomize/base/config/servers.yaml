@@ -234,6 +234,8 @@ java:
     address: "play.starnet.gg"
   - name: "Spellbrook"
     address: "play.spellbrook.gg"
+  - name: "Lord of the Craft"
+    address: "mc.lotc.co"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

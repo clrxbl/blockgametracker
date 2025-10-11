@@ -54,7 +54,7 @@ func getEnv(key, fallback string) string {
 	return value
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
+func index(w http.ResponseWriter) {
 	_, err := fmt.Fprintf(w, "mcstatus-exporter")
 	if err != nil {
 		return
@@ -150,7 +150,12 @@ func updateConfig() {
 		log.Fatalf("error opening YAML file: %v", err)
 		panic(err)
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(file)
 
 	decoder := yaml.NewDecoder(file)
 	err = decoder.Decode(&config)
@@ -166,7 +171,6 @@ func main() {
 	log.Info("mcstatus-exporter")
 	updateConfig()
 
-	http.HandleFunc("/", index)
 	prometheus.MustRegister(promGauge)
 	http.HandleFunc("/metrics", promMetrics)
 

@@ -15,6 +15,7 @@ import (
 	"github.com/eko/gocache/lib/v4/cache"
 	"github.com/eko/gocache/lib/v4/store"
 	gocachestore "github.com/eko/gocache/store/go_cache/v4"
+	"github.com/fsnotify/fsnotify"
 	"github.com/gosimple/slug"
 	"github.com/jamesog/iptoasn"
 	"github.com/mcstatus-io/mcutil/v4/status"
@@ -145,8 +146,8 @@ func promMetrics(w http.ResponseWriter, r *http.Request) {
 	promhttp.Handler().ServeHTTP(w, r)
 }
 
-func updateConfig() {
-	file, err := os.Open(getEnv("CONFIG_FILE", "servers.yaml"))
+func reloadConfig(path string) {
+	file, err := os.Open(path)
 	if err != nil {
 		log.Fatalf("error opening YAML file: %v", err)
 		panic(err)
@@ -168,9 +169,55 @@ func updateConfig() {
 	log.Info("loaded config", "java", len(config.Java), "bedrock", len(config.Bedrock))
 }
 
+func watchConfig(path string) {
+	watcher, err := fsnotify.NewWatcher()
+	if err != nil {
+		log.Error("unable to hot reload configuration: " + err.Error())
+		return
+	}
+	defer func(watcher *fsnotify.Watcher) {
+		err := watcher.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(watcher)
+
+	err = watcher.Add(path)
+	if err != nil {
+		log.Error("unable to hot reload configuration: " + err.Error())
+		return
+	}
+
+	go func() {
+		for {
+			select {
+			case event, ok := <-watcher.Events:
+				if !ok {
+					return
+				}
+				if event.Has(fsnotify.Write) {
+					log.Info("detected config file change, reloading")
+					reloadConfig(path)
+				}
+			case err, ok := <-watcher.Errors:
+				if !ok {
+					return
+				}
+				log.Error("error while watching config file: ", err.Error())
+			}
+		}
+	}()
+
+	<-make(chan struct{})
+
+}
+
 func main() {
 	log.Info("mcstatus-exporter")
-	updateConfig()
+
+	var cfgFile = getEnv("CONFIG_FILE", "servers.yaml")
+	reloadConfig(cfgFile)
+	watchConfig(cfgFile)
 
 	prometheus.MustRegister(promGauge)
 	http.HandleFunc("/metrics", promMetrics)

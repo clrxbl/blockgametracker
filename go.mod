@@ -6,6 +6,7 @@ require (
 	github.com/charmbracelet/log v0.4.2
 	github.com/eko/gocache/lib/v4 v4.2.2
 	github.com/eko/gocache/store/go_cache/v4 v4.2.2
+	github.com/fsnotify/fsnotify v1.9.0
 	github.com/gosimple/slug v1.15.0
 	github.com/jamesog/iptoasn v0.1.0
 	github.com/mcstatus-io/mcutil/v4 v4.0.1

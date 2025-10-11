@@ -170,25 +170,25 @@ func reloadConfig(path string) {
 }
 
 func watchConfig(path string) {
-	watcher, err := fsnotify.NewWatcher()
-	if err != nil {
-		log.Error("unable to hot reload configuration: " + err.Error())
-		return
-	}
-	defer func(watcher *fsnotify.Watcher) {
-		err := watcher.Close()
-		if err != nil {
-			panic(err)
-		}
-	}(watcher)
-
-	err = watcher.Add(path)
-	if err != nil {
-		log.Error("unable to hot reload configuration: " + err.Error())
-		return
-	}
-
 	go func() {
+		watcher, err := fsnotify.NewWatcher()
+		if err != nil {
+			log.Error("unable to hot reload configuration: " + err.Error())
+			return
+		}
+		defer func() {
+			err := watcher.Close()
+			if err != nil {
+				log.Error("failed to close watcher: " + err.Error())
+			}
+		}()
+
+		err = watcher.Add(path)
+		if err != nil {
+			log.Error("unable to hot reload configuration: " + err.Error())
+			return
+		}
+
 		for {
 			select {
 			case event, ok := <-watcher.Events:
@@ -207,9 +207,6 @@ func watchConfig(path string) {
 			}
 		}
 	}()
-
-	<-make(chan struct{})
-
 }
 
 func main() {
@@ -222,7 +219,7 @@ func main() {
 	prometheus.MustRegister(promGauge)
 	http.HandleFunc("/metrics", promMetrics)
 
-	var httpBindAddr string = getEnv("BIND", ":8080")
+	var httpBindAddr = getEnv("BIND", ":8080")
 	log.Infof("listening on %s", httpBindAddr)
 	err := http.ListenAndServe(httpBindAddr, nil)
 	if err != nil {

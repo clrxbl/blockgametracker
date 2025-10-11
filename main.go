@@ -103,14 +103,14 @@ func query(edition string, name string, queryHostname string) {
 	if errors.Is(err, store.NotFound{}) {
 		log.Info("performing uncached asn lookup", "ip", resolvedIP[0])
 		ip, err = iptoasn.LookupIP(fmt.Sprint(resolvedIP[0]))
-		// TODO: probably want to continue with fallback N/A AS values if this fails
 		if err != nil {
-			panic(err)
-		}
-
-		err = asnLookupCache.Set(ctx, resolvedIP[0], ip)
-		if err != nil {
-			panic(err)
+			log.Error("unable to resolve asn: "+err.Error(), "hostname", resolvedHostname)
+			ip = iptoasn.IP{ASName: "N/A", ASNum: 0, IP: resolvedHostname}
+		} else {
+			err = asnLookupCache.Set(ctx, resolvedIP[0], ip)
+			if err != nil {
+				panic(err)
+			}
 		}
 	}
 

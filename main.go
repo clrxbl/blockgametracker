@@ -136,6 +136,7 @@ func queryServers(servers []Server, serverType string, wg *sync.WaitGroup) {
 func promMetrics(w http.ResponseWriter, r *http.Request) {
 	var wg sync.WaitGroup
 
+	promGauge.Reset()
 	queryServers(config.Java, "java", &wg)
 	queryServers(config.Bedrock, "bedrock", &wg)
 

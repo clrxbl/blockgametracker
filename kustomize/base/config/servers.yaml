@@ -238,6 +238,8 @@ java:
     address: "mc.lotc.co"
   - name: "Advancius"
     address: "mc.advancius.net"
+  - name: "TFGames"
+    address: "jogar.tfgames.com.br"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

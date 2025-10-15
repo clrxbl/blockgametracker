@@ -1,4 +1,8 @@
 java:
+  - name: "Origon"
+    address: "origon.pro"
+  - name: "Elytra"
+    address: "elytra.pro"
   - name: "MCC Island"
     address: "play.mccisland.net"
   - name: "Hypixel"

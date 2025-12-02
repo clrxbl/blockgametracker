@@ -117,9 +117,15 @@ func query(edition string, name string, queryHostname string) {
 
 	log.Debug("resolved", "hostname", resolvedHostname, "ip", ip.IP, "asn", ip.ASNum)
 
-	log.Info("finished querying server ", "edition", edition, "name", name, "players", strconv.FormatInt(*playercount, 10), "execTimeMs", time.Since(executionTimer).Milliseconds())
+	var pc string = "N/A"
+	if playercount != nil {
+		pc = strconv.FormatInt(int64(*playercount), 10)
+	}
+	log.Info("finished querying server ", "edition", edition, "name", name, "players", pc, "execTimeMs", time.Since(executionTimer).Milliseconds())
 
-	promGauge.WithLabelValues(edition, name, slug.Make(name), queryHostname, strconv.Itoa(int(ip.ASNum)), ip.ASName).Set(float64(*playercount))
+	if playercount != nil {
+		promGauge.WithLabelValues(edition, name, slug.Make(name), queryHostname, strconv.Itoa(int(ip.ASNum)), ip.ASName).Set(float64(*playercount))
+	}
 }
 
 func queryServers(servers []Server, serverType string, wg *sync.WaitGroup) {

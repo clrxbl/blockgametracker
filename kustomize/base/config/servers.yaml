@@ -242,6 +242,8 @@ java:
     address: "mc.advancius.net"
   - name: "OPSUCHT"
     address: "opsucht.net"
+  - name: "SunnySMP"
+    address: "play.sunnysmp.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

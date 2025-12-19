@@ -9,6 +9,8 @@ java:
     address: "play.minehut.com"
   - name: "MineKeep"
     address: "play.minekeep.net"
+  - name: "ImpendMC"
+    address: "play.impendmc.net"
   - name: "EarthMC"
     address: "play.earthmc.net"
   - name: "2b2t"

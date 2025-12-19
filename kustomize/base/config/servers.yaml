@@ -242,6 +242,8 @@ java:
     address: "mc.advancius.net"
   - name: "OPSUCHT"
     address: "opsucht.net"
+  - name: "Nuvguard Heroes"
+    address: "mc.nuvguard.com"
   - name: "SunnySMP"
     address: "play.sunnysmp.net"
 bedrock:

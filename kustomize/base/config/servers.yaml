@@ -244,6 +244,8 @@ java:
     address: "opsucht.net"
   - name: "Nuvguard Heroes"
     address: "mc.nuvguard.com"
+  - name: "SunnySMP"
+    address: "play.sunnysmp.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -248,6 +248,8 @@ java:
     address: "mc.nuvguard.com"
   - name: "SunnySMP"
     address: "play.sunnysmp.net"
+  - name: "RealmSMP"
+    address: "play.realmsmp.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

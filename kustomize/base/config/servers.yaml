@@ -250,6 +250,8 @@ java:
     address: "play.sunnysmp.net"
   - name: "RealmSMP"
     address: "play.realmsmp.net"
+  - name: "HugoSMP"
+    address: "hugosmp.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

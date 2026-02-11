@@ -259,6 +259,8 @@ java:
     address: "leg.gg"
   - name: "Hyperborea"
     address: "playhyperborea.com"
+  - name: "MineBounds"
+    address: "play.minebounds.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

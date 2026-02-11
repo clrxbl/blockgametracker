@@ -255,6 +255,10 @@ java:
     address: "hugosmp.net"
   - name: "GrieferGames"
     address: "griefergames.net"
+  - name: "Leg.GG"
+    address: "leg.gg"
+  - name: "Hyperborea"
+    address: "playhyperborea.com"
   - name: "MineBounds"
     address: "play.minebounds.com"
 bedrock:

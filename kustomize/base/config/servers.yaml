@@ -255,6 +255,8 @@ java:
     address: "hugosmp.net"
   - name: "GrieferGames"
     address: "griefergames.net"
+  - name: "MineBounds"
+    address: "play.minebounds.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

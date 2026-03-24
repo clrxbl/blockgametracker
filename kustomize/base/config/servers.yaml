@@ -275,3 +275,5 @@ bedrock:
     disabled: true
   - name: "NetherGames"
     address: "play.nethergames.org"
+  - name: "MegaSMP"
+    address: "play.megasmp.gg"

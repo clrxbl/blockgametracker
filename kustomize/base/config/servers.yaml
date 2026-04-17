@@ -257,6 +257,8 @@ java:
     address: "griefergames.net"
   - name: "MineBounds"
     address: "play.minebounds.com"
+  - name: "OneBlock France"
+    address: "oneblockfrance.fr"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

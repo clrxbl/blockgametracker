@@ -120,8 +120,6 @@ java:
     address: "play.minefreeze.net"
   - name: "Timolia"
     address: "play.timolia.de"
-  - name: "KiwiSMP"
-    address: "play.kiwismp.fun"
   - name: "Freakyville"
     address: "mc.freakyville.net"
   - name: "PokeFind"

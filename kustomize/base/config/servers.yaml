@@ -259,6 +259,8 @@ java:
     address: "play.minebounds.com"
   - name: "Cobblemon Rivals"
     address: "play.cobblemonrivals.com"
+  - name: "CityRP"
+    address: "play.cityrp.org"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

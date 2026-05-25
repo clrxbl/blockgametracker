@@ -1,0 +1,29 @@
+//   schemas/ping.fbs (kept in sync; do not diverge).
+//
+// Regenerate Go bindings (from the repo root):
+//   flatc --go -o . schemas/ping.fbs
+
+namespace blockgametracker_protocol.ping;
+
+enum Platform : byte {
+  unknown = 0,
+  java    = 1,
+  bedrock = 2,
+}
+
+table Ping {
+  time:           uint64;
+  server:         string;
+  server_address: string;
+  platform:       Platform;
+  as_number:      uint32 = null;
+  as_name:        string;
+  player_count:   uint32 = null;
+}
+
+table PingBatch {
+  source: string;
+  pings:  [Ping];
+}
+
+root_type PingBatch;

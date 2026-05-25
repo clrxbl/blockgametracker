@@ -27,6 +27,7 @@ require (
 	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
 	github.com/go-logfmt/logfmt v0.6.1 // indirect
 	github.com/golang/mock v1.6.0 // indirect
+	github.com/google/flatbuffers v25.12.19+incompatible // indirect
 	github.com/gosimple/unidecode v1.0.1 // indirect
 	github.com/lucasb-eyer/go-colorful v1.3.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

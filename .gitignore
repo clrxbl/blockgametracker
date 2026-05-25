@@ -29,3 +29,6 @@ go.work
 infra/
 
 .idea/
+
+.env
+spool/

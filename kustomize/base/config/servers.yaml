@@ -261,7 +261,7 @@ java:
     address: "play.cobblemonrivals.com"
   - name: "Laby.net"
     address: "laby.net"
-  - name: "Democracycraft"
+  - name: "DemocracyCraft"
     address: "play.democracycraft.net"
 bedrock:
   - name: "Mineville"

@@ -1,12 +1,12 @@
-version: "3"
-
 services:
-  blockgametracker:
+  mcstatus-exporter:
     build: .
     image: ghcr.io/clrxbl/blockgametracker
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
     environment:
       CONFIG_FILE: "/config/servers.yaml"
+    env_file: .env
+    restart: unless-stopped
     volumes:
-      - ./deploy/config:/config
+      - ./config:/config:ro

@@ -188,9 +188,6 @@ java:
   - name: "Tubnet"
     address: "mc.tubnet.gg"
     disabled: true
-  - name: "The Chunk"
-    address: "play.chunkmc.com"
-    disabled: true
   - name: "Sunblock"
     address: "sunblock.gg"
     disabled: true

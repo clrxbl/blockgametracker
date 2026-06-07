@@ -260,6 +260,8 @@ java:
     address: "laby.net"
   - name: "DemocracyCraft"
     address: "play.democracycraft.net"
+  - name: "QSMP Live"
+    address: "play.qsmp.live"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

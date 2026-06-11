@@ -174,8 +174,7 @@ java:
     address: "play.hivemc.com"
     disabled: true
   - name: "Mineplex"
-    address: "us.mineplex.com"
-    disabled: true
+    address: "play.mineplex.com"
   - name: "Landania"
     address: "landania.net"
     disabled: true

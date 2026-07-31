@@ -261,6 +261,8 @@ java:
     address: "play.democracycraft.net"
   - name: "QSMP Live"
     address: "play.qsmp.live"
+  - name: "CrystalChaos"
+    address: "crystalchaos.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

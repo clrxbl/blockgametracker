@@ -287,3 +287,5 @@ bedrock:
     address: "play.oneblockonline.com"
   - name: "Genwars"
     address: "play.genwars.com"
+  - name: "Treasure Hunt"
+    address: "th.enchanted.gg"

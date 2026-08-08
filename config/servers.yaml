@@ -263,6 +263,8 @@ java:
     address: "play.qsmp.live"
   - name: "CrystalChaos"
     address: "crystalchaos.net"
+  - name: "MagnoliaMC"
+    address: "play.magnoliamc.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -265,6 +265,10 @@ java:
     address: "crystalchaos.net"
   - name: "MagnoliaMC"
     address: "play.magnoliamc.net"
+  - name: "ArchMC"
+    address: "play.arch.mc"
+  - name: "PvPHQ"
+    address: "play.pvphq.com"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

@@ -269,6 +269,8 @@ java:
     address: "play.arch.mc"
   - name: "PvPHQ"
     address: "play.pvphq.com"
+  - name: "Spellbrook"
+    address: "play.spellbrook.gg"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"

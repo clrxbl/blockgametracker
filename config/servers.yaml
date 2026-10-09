@@ -273,6 +273,10 @@ java:
     address: "play.spellbrook.gg"
   - name: "MCPVP"
     address: "mcpvp.com"
+  - name: "Stoneworks"
+    address: "play.stoneworks.gg"
+  - name: "CivMC"
+    address: "play.civmc.net"
 bedrock:
   - name: "Mineville"
     address: "play.inpvp.net"
